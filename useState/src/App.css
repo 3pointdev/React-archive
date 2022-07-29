@@ -1,0 +1,12 @@
+.inputBox{
+  width: 180px;
+}
+.numberPad{
+  width: 180px;
+}
+.numberPad button{
+  width: 60px;
+}
+.delete{
+  float: right;
+}
