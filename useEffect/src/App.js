@@ -1,11 +1,8 @@
 import './App.css';
+import Time from './components/Time';
 
 function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+  return <Time />
 }
 
 export default App;
