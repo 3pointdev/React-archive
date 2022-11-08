@@ -1,26 +1,24 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import "../styles/find.css";
 
-export default function FindBook() {
+export default function Find() {
   const dispatch = useDispatch();
-  const [bookName, setBookName] = useState("");
+  const [postName, setPostName] = useState("");
 
   const formEvent = (e) => {
     e.preventDefault();
-    dispatch({ type: "SEARCH", data: bookName });
+    dispatch({ type: "SEARCH", data: postName });
   };
 
   return (
-    <form className="search_form" onSubmit={formEvent}>
+    <form onSubmit={formEvent}>
       <input
         type="text"
         placeholder="검색"
-        className="search_text"
-        value={bookName}
-        onChange={(e) => setBookName(e.target.value)}
+        value={postName}
+        onChange={(e) => setPostName(e.target.value)}
       />
-      <input type="submit" className="search_submit" value="검색" />
+      <input type="submit" value="검색" />
     </form>
   );
 }

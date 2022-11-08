@@ -1,22 +1,22 @@
 export default function reducer(currentState, action) {
   if (currentState === undefined) {
     return {
-      books: [
+      posts: [
         {
-          name: "리액트",
-          author: "장준수",
+          title: "리액트",
+          writer: "홍길동",
           secret: true,
           desc: "리액트란? ...",
         },
         {
-          name: "리덕스",
-          author: "장준수",
+          title: "리덕스",
+          writer: "홍길동",
           secret: true,
           desc: "리덕스란? ...",
         },
         {
-          name: "자바스크립트",
-          author: "장준수",
+          title: "자바스크립트",
+          writer: "홍길동",
           secret: false,
           desc: "자바스크립트란? ...",
         },
@@ -27,29 +27,29 @@ export default function reducer(currentState, action) {
 
   const newState = { ...currentState };
 
-  const bookMap = {
-    BOOKADD() {
-      newState.books.push(action.data);
+  const postMap = {
+    POSTADD() {
+      newState.posts.push(action.data);
       newState.search = {};
     },
-    BOOKREMOVE() {
-      newState.books.splice(action.idx, 1);
+    POSTREMOVE() {
+      newState.posts.splice(action.idx, 1);
     },
     SEARCH() {
       if (
-        newState.books.filter((books) => books.name === action.data)[0] !==
+        newState.posts.filter((posts) => posts.title === action.data)[0] !==
         undefined
       ) {
-        newState.search = newState.books.filter(
-          (books) => books.name === action.data
+        newState.search = newState.posts.filter(
+          (posts) => posts.title === action.data
         )[0];
       } else {
-        alert("검색결과가 없습니다.\n문서제목을 정확히 입력해주세요.");
+        alert("검색결과가 없습니다.\n글제목을 정확히 입력해주세요.");
       }
     },
   };
 
-  bookMap[action.type]();
+  postMap[action.type]();
 
   return newState;
 }
