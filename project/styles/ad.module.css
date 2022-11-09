@@ -1,0 +1,13 @@
+.container {
+  width: 90%;
+  height: 200px;
+  background-color: var(--main-bx-color);
+  margin: 40px 20px 0 20px;
+}
+
+.container p {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

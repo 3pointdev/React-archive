@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic:wght@400;700;800&display=swap");
+
+* {
+  color: black;
+  font-family: "Nanum Gothic", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  background-color: var(--main-bg-color);
+  margin: 0;
+  height: 100vh;
+}
+
+#__next {
+  width: 100%;
+  max-width: 1020px;
+  min-width: 512px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: var(--main-bg-color);
+}
+
+#main_page {
+  z-index: -2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
