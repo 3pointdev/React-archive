@@ -1,4 +1,4 @@
-import style from "../styles/ad.module.css";
+import style from "../styles/components/ad.module.css";
 
 export default function Ad() {
   return (

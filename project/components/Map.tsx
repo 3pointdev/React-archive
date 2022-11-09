@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import style from "../styles/map.module.css";
+import style from "../styles/components/map.module.css";
 
 declare global {
   interface Window {
@@ -9,10 +9,9 @@ declare global {
 
 export default function MapTest() {
   useEffect(() => {
-    const APIKEY = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY;
     const mapScript = document.createElement("script");
     mapScript.async = true;
-    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${APIKEY}&autoload=false`;
+    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_KEY}&autoload=false`;
 
     document.head.appendChild(mapScript);
     const onLoadKakaoMap = () => {
@@ -30,7 +29,7 @@ export default function MapTest() {
 
   return (
     <div className={style.container}>
-      <h2>동물병원지도</h2>
+      <h2>반려병원지도</h2>
       <div id="map" className={style.map}></div>
     </div>
   );

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import style from "../styles/header.module.css";
+import style from "../styles/components/header.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -26,13 +26,17 @@ export default function Header() {
       >
         <FontAwesomeIcon icon={faBars} />
       </Link>
-      <Image src="/brands/Logo.png" alt="Logo" width="152" height="92" />
+      <Link href="/">
+        <Image src="/brands/Logo.png" alt="Logo" width="152" height="92" />
+      </Link>
       {state.loginState ? (
+        //로그아웃
         <Link href="/" className={style.link}>
           <FontAwesomeIcon icon={faRightFromBracket} />
         </Link>
       ) : (
-        <Link href="/" className={style.link}>
+        //로그인
+        <Link href="/login" className={style.link}>
           <FontAwesomeIcon icon={faRightToBracket} />
         </Link>
       )}
